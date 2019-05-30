@@ -1,7 +1,7 @@
 # webdriverio-codeceptjs-example
 Test automation with webdriverio and codeceptjs
 
-[![Build Status](https://travis-ci.org/StephenDavidson/webdriverio-codeceptjs-example.svg?branch=master)](https://travis-ci.org/StephenDavidson/webdriverio-codeceptjs-example)
+[![Build Status](https://travis-ci.com/agrublev/webdriverio-codeceptjs-example.svg?branch=master)](https://travis-ci.com/agrublev/webdriverio-codeceptjs-example)
 
 ## Getting Started
 Let's setup the repo and install dependencies:
