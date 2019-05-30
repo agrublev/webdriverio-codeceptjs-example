@@ -13,4 +13,5 @@ script:
   - npm install selenium-server
   - ./node_modules/.bin/selenium-standalone install
   - ./node_modules/.bin/selenium-standalone start &
+  - sleep 5 && echo 'z'
   - npm run test
