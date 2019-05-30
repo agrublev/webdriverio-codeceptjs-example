@@ -12,4 +12,5 @@ script:
   - npm install
   - npm install selenium-server
   - ./node_modules/.bin/selenium-standalone install
+  - ./node_modules/.bin/selenium-standalone start
   - npm run test
