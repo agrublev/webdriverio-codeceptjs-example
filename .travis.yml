@@ -1,7 +1,15 @@
 language: node_js
 node_js:
-  - "stable"
+  - 8
+sudo: required
+services:
+  - docker
+before_install:
+  - docker pull selenium/standalone-chrome:latest
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - "./node_modules/.bin/selenium &"
+  - docker run -d --net=host --shm-size=2g selenium/standalone-chrome:latest
+script:
+  - npm install
+  - npm install selenium-server
+  - ./node_modules/.bin/selenium-standalone install
+  - npm run test
