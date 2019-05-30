@@ -7,8 +7,8 @@ exports.config = {
     timeout: 10000,
     output: "./output",
     helpers: {
-        WebDriverIO: {
-            "url": "https://google.com",
+        WebDriver: {
+            "url": "https://dev.freedcamp.chat ",
             browser: "chrome",
             desiredCapabilities: {
                 chromeOptions: {
@@ -16,27 +16,8 @@ exports.config = {
                 }
             },
             windowSize: "1440x700",
-            waitForNavigation: ["networkidle2", "domcontentloaded"],
+            waitForNavigation: ["networkidle2", "domcontentloaded"]
         }
-    },
-    bootstrap: (done) => {
-        selenium.start((err, child) => {
-            if (err) {
-                throw err;
-            }
-
-            selenium.__child = child;
-            done();
-        });
-    },
-    teardown: (done) => {
-        setTimeout(() => {
-            try {
-                if (selenium.__child) selenium.__child.kill();
-            } catch (e) {
-            }
-        }, 3000);
-        done();
     },
     name: "webdriverio-codeceptjs-example",
     multiple: {
@@ -45,6 +26,7 @@ exports.config = {
         }
     },
     include: {
+        I: "./custom_steps.js",
         homePage: './pages/home.js'
     }
 }
