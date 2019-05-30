@@ -8,7 +8,7 @@ exports.config = {
     output: "./output",
     helpers: {
         WebDriver: {
-            "url": "https://dev.freedcamp.chat ",
+            "url": "https://dev.freedcamp.chat/login",
             browser: "chrome",
             desiredCapabilities: {
                 chromeOptions: {
@@ -20,11 +20,6 @@ exports.config = {
         }
     },
     name: "webdriverio-codeceptjs-example",
-    multiple: {
-        parallel: {
-            chunks: 2
-        }
-    },
     include: {
         I: "./custom_steps.js",
         homePage: './pages/home.js'
